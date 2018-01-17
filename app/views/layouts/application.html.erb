@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+    <%= render 'shared/header' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

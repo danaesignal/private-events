@@ -1,0 +1,13 @@
+<%= render @event %>
+<div="guest-list">
+  <strong>Attendees:</strong>
+  <ul>
+    <% if @event.attendees.empty? %>
+      <li>None found</li>
+    <% else %>
+      <% @event.attendees.each do |guest| %>
+      <li><%= guest.username %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

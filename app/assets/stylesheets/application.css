@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.ident {
+  display: inline-block;
+  float: right;
+  margin-bottom: -15px;
+}
+
+.user-events ul li.creator {
+  display: none;
+}

@@ -8,11 +8,12 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      redirect_to "http://www.mmo-champion.com"
+      render 'new'
     end
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   private

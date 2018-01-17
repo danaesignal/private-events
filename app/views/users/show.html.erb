@@ -1,2 +1,36 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User: <%= @user.username %></h1>
+<h3>Email address: <%= @user.email%> </h3>
+</br>
+
+<h2>Events created:</h2>
+<div class="user-events">
+  <% if @user.events.empty? %>
+    <ul>
+      <li><strong>No events found!</strong></li>
+    </ul>
+  <% else %>
+    <%= render @user.events %>
+  <% end %>
+</div>
+
+<h2>Upcoming Events Attending:</h2>
+<div class="attended-events">
+  <% if @user.attended_events.upcoming.empty? %>
+    <ul>
+      <li><strong>No events found!</strong></li>
+    </ul>
+  <% else %>
+    <%= render @user.attended_events.upcoming %>
+  <% end %>
+</div>
+
+<h2>Past Events Attended:</h2>
+<div class="attended-events">
+  <% if @user.attended_events.past.empty? %>
+    <ul>
+      <li><strong>No events found!</strong></li>
+    </ul>
+  <% else %>
+    <%= render @user.attended_events.past %>
+  <% end %>
+</div>
